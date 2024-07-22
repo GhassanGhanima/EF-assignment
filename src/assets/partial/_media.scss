@@ -1,0 +1,44 @@
+@media (max-width:991px) {
+    .table-card{
+        &.card-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            gap: 16px;
+          }
+    }
+}
+
+@media (max-width:576px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:767px) {
+    .remove-on-mobile{
+        display: none !important;
+    }
+
+    .table-card{
+        &.card-container {
+            display: grid;
+            grid-template-columns: 1fr ;
+            gap: 16px;
+          }
+    }
+    .university-card .card-details{
+        grid-template-columns: 1fr  ;
+
+    }
+
+    .search-container{
+        flex-direction: column;
+    
+      }
+    
+      .form-group{
+        width: 100%;
+
+      }
+    
+}
