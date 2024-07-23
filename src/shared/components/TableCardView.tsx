@@ -1,5 +1,8 @@
+
+// table card view to show data 
+
 import React from 'react';
-import Button from './Button'; // Make sure this imports the correct Button component
+import Button from './Button'; 
 import { Link } from 'react-router-dom';
 
 interface TableCardViewProps {
@@ -10,12 +13,12 @@ interface TableCardViewProps {
 
 const TableCardView: React.FC<TableCardViewProps> = ({ data, columns, actions }) => {
   return (
-    <div className="table-card card-container">
+    <div className="table-card card-container" data-testid="card-view">
       {data.map((item, index) => (
         <div key={index} className="card">
           {columns.map((column, colIndex) => (
             <div key={colIndex} className="card-item">
-              <strong>{column}:</strong> {column === 'web_pages' ? <Link to={`${item[column]}`}  >{item[column]}</Link> : item[column]}
+              <strong>{column}:</strong> {column === 'web_pages' ? <Link to={`${item[column]}`} className='text-break'  >{item[column]}</Link> : item[column]}
             </div>
           ))}
           {actions && (

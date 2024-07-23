@@ -1,3 +1,5 @@
+// this is the loader components for the all applications
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { UniversityState } from '../interface/universitiesInterFace';

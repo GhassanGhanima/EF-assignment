@@ -1,4 +1,4 @@
-// university=ies  reducers usage in thunk actions
+// universities  reducers usage in thunk actions
 
 import { SET_ERROR, GET_ITEM, SET_ITEMS, SET_LOADING, SET_PAGE, SET_SEARCH, universityActionTypes, DELETE_ITEM, SET_SORT } from '../store/universitiesStore/actions';
 import { initialUniversityState } from '../models/universities';

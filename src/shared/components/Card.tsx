@@ -1,3 +1,5 @@
+// this is the card components
+
 import React, { useMemo } from 'react';
 
 interface CardProps {

@@ -1,3 +1,6 @@
+
+// table components render the data in table with actions and sorting 
+
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import Button from './Button';
 import TableCardView from './TableCardView';
@@ -18,7 +21,10 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ data, columns, currentPage, itemsPerPage, actions }) => {
 
   const dispatch = useDispatch();
-  const { sortColumn, sortDirection } = useSelector((state: UniversityState) => state.sortColumn);
+  const sortDirection  = useSelector((state: UniversityState) => state.sortColumn?.sortDirection );
+  const  sortColumn = useSelector((state: UniversityState) => state.sortColumn?.sortColumn );
+
+
   const { isMobile } = useResponsive();
 
   const [cardTableView, setCardTableView] = useState('table');
@@ -27,6 +33,7 @@ const Table: React.FC<TableProps> = ({ data, columns, currentPage, itemsPerPage,
 
   // paginate the data 
   const paginatedData = useMemo(() => {
+    if (!Array.isArray(data)) return [];
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const slicedData = data.slice(startIndex, endIndex);
@@ -124,7 +131,7 @@ const Table: React.FC<TableProps> = ({ data, columns, currentPage, itemsPerPage,
   return (
     <>
       <div className="table-card-view">
-        <h3>Number of records: {data.length}</h3>
+        <h3>Number of records: {data?.length}</h3>
         <div className={`table-card-view-actions ${isMobile ? 'remove-on-mobile' : ''}`}>
           <Button title='table' className={activeCardTableHandler('table')} icon="main-icon-list" onClick={() => setCardTableView('table')} />
           <Button title='card' className={activeCardTableHandler('card')} icon="main-icon-dashboard-patient" onClick={() => setCardTableView('card')} />
