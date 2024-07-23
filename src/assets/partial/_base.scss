@@ -150,6 +150,7 @@ select:disabled {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    flex-wrap: wrap;
     align-items: center;
     list-style: none;
     padding-block: 1rem;
@@ -330,6 +331,11 @@ tr:nth-child(even) {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.text-break{
+   word-break: break-all;
+
+}
 .table-actions{
     display: flex;
     align-items: center;
@@ -455,3 +461,61 @@ tr:nth-child(even) {
   .fade-in {
     animation: fadeIn 1s forwards;
   }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    opacity: 0.5;
+    z-index: 0;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border: 1px solid var(--lightBlue);
+  width: 500px;
+  min-width: 80vw;
+  max-width: 90vw;
+  padding: 0;
+
+  &.modal-sm {
+      width: 500px;
+      min-width: 40vw;
+      max-width: 90vw;
+  }
+  &.modal-xs {
+    width: 200px;
+    min-width: 20vw;
+    max-width: 90vw;
+}
+
+  .modal-header {
+      padding: 1rem;
+      font-family: bolder;
+      background: var(--gray);
+      text-align: center;
+  }
+
+  .modal-body {
+      padding: 1rem;
+
+  }
+}
+.modal-actions {
+  grid-column: 1/3;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 5rem;
+
+  button {
+      padding-inline: 2rem;
+
+  }
+}

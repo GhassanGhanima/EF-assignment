@@ -2,6 +2,7 @@ import { Dispatch } from 'react';
 import { setError, setItems, setLoading, universityActionTypes } from '../../../store/universitiesStore/actions';
 import { University } from '../../interface/universitiesInterFace';
 import Axios from './../axiosInstance';
+import axios from 'axios';
 import * as localStorage from './../localStorage'
 import { Country } from '../../interface/country';
 
@@ -34,16 +35,29 @@ export const getUniversities = () => async (
   }
 };
 
+// export const fetchCountries = async (): Promise<Country[]> => {
+//   try {
+//     const response = await fetch('/json/countries.json'); 
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data: Country[] = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Error fetching countries:', error);
+//     throw error;
+//   }
+// };
 export const fetchCountries = async (): Promise<Country[]> => {
   try {
-    const response = await fetch('/json/countries.json'); 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    const response = await axios.get('/json/countries.json'); 
+    return response.data;
+  } catch (error:any) {
+    if (axios.isAxiosError(error)) {
+      console.error('Error fetching countries:', error.message);
+    } else {
+      console.error('Unexpected error:', error);
     }
-    const data: Country[] = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching countries:', error);
     throw error;
   }
 };

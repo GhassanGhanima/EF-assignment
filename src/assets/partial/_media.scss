@@ -15,6 +15,12 @@
 }
 
 @media (max-width:767px) {
+
+    body{
+        padding: 1rem;
+    }
+    
+    
     .remove-on-mobile{
         display: none !important;
     }
@@ -38,6 +44,30 @@
     
       .form-group{
         width: 100%;
+
+      }
+
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--white);
+        border: 1px solid var(--lightBlue);
+        width: 500px;
+        min-width: 80vw;
+        max-width: 90vw;
+        padding: 0;
+      
+
+        &.modal-xs {
+          width: 200px;
+          min-width: 90vw;
+          max-width: 90vw;
+      }
+      
+
+      
 
       }
     

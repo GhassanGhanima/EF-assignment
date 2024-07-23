@@ -1,3 +1,6 @@
+// custom Pagination components for table and card view 
+
+
 import React, { useCallback, useMemo } from 'react';
 import Button from './Button';
 
