@@ -1,31 +1,36 @@
-This is a universities search  project bootstrapped with Ghassan Mohammad Ali Ghanimah .
+# Universities Search Project
 
-EF assignment
+## Project Overview
 
-## Project Description
+The Universities Search Project is a dynamic application that allows users to search for universities based on an API. The project features functionality for filtering universities by country, sorting the list, and viewing detailed information about each university. It is designed to be responsive and accessible on various devices including desktop, tablet, and mobile.
 
-the  project about render multi university pase on API  search  , filter about country  and sorting these university list and can view the university 
+## Key Features
 
- this project apply on all devices ( Desktop , Tablet , Mobile)
+- **Search**: Quickly find universities using a search bar.
+- **Filter**: Narrow down results by country.
+- **Sort**: Organize the list of universities by various criteria.
+- **View Details**: Access detailed information about each university.
+- **Responsive Design**: Fully functional on desktop, tablet, and mobile devices.
 
-## Project Tools
+## Technology Stack
 
-1- html scss
-2- typescript (React)
-3 redux 
+- **HTML**: For structuring the content.
+- **SCSS**: For styling and layout.
+- **TypeScript**: For type-safe code using React.
+- **React**: Frontend library for building user interfaces.
+- **Redux**: State management for handling application state.
 
 ## Getting Started
 
-First, run the development server:
+To get started with the project, follow these steps:
 
-node -v : 20.12.2
-npm 10.5.2
+1. **Install Dependencies**
 
-```bash
+   Ensure you have the following versions:
+   - Node.js: 20.12.2
+   - npm: 10.5.2
 
-npm install 
+   Run the following command to install the project dependencies:
 
-npm run dev
-
-
-```
+   ```bash
+   npm install
