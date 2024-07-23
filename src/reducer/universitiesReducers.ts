@@ -27,7 +27,7 @@ export const universityReducer = (
 
     case SET_SEARCH:
       return {
-        ...state, search: action.payload, items: state.mainItems.filter((item: any) => {
+        ...state, search: action.payload,currentPage:1, items: state.mainItems.filter((item: any) => {
           if(item.country !== action.payload.country &&  action.payload.country !== ""){
             return false
           }
